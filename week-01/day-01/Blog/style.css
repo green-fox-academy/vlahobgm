@@ -1,0 +1,61 @@
+body, html {
+    margin: 0px 0px;
+    padding: 0 0;
+}
+
+header {
+    background-color: gray;
+    margin: 0px 0px;
+    padding: 0px 10%;
+    border: 1px black solid;
+    height: 50px;
+}
+header h1 {
+    padding: 5px 0px;
+    margin: 0px;
+}
+
+main {
+    margin: 0px 10%;
+}
+
+input {
+    border: 1px black solid;
+}
+
+textarea {
+    width: 100%;
+    border: 1px black solid;
+    padding: 10px 2px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px 0px;
+}
+
+button {
+    border-radius: 5px;
+    border: 1px black solid;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+}
+p {
+    font-weight: bold;
+}
+
+div {
+    border: 1px black solid;
+    height: 100px;
+    margin: 10px 0px;
+    padding: 2px 2px;
+}
+div h2{
+    padding: 2px 2px;
+    margin: 0px 0px;
+}
+div p {
+    font-weight: normal;
+    margin: 0px;
+    padding: 2px 2px;
+}
+

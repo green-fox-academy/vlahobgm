@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class TelephoneBook {
     public static void main(String[] args) {
@@ -12,7 +13,11 @@ public class TelephoneBook {
         //What is John K. Miller's phone number?
         System.out.println("What is John K. Miller's phone number? " + bookMap.get("John K. Miller"));
         //Whose phone number is 307-687-2982?
-
+        for (Map.Entry<String, String> item : bookMap.entrySet()) {
+            if (item.getValue() == "307-687-2982") {
+                System.out.println("Whose phone number is 307-687-2982? " + item.getKey());
+            }
+        }
         //Do we know Chris E. Myers' phone number?
         System.out.println(bookMap.containsKey("Do we know Chris E. Myers' phone number?" + "Chris E. Myers"));
     }

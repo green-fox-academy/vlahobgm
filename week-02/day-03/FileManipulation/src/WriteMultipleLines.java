@@ -15,7 +15,25 @@ public class WriteMultipleLines {
         // If the word is 'apple' and the number is 5, it should write 5 lines
         // into the file and each line should read 'apple'
         // The function should not raise any errors if it could not write the file.
+
+        writeMultiple("my-file.txt", "alma", 10);
+
+    }
+    public static void writeMultiple(String path, String word, int number){
+        List<String> content = new ArrayList<>();
+        for (int i = 0; i < number; i++) {
+            content.add(word);
+        }
         try {
+            Path filePath = Paths.get(path);
+            Files.write(filePath, content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+        /*try {
             writeMultiple();
             System.out.println("my-file.txt changed");
         }catch (IOException e){
@@ -32,5 +50,5 @@ public class WriteMultipleLines {
             list.add("Apple");
         }
         Files.write(path, list);
-    }
+    }*/
 }

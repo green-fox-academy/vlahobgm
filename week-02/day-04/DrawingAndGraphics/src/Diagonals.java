@@ -13,6 +13,8 @@ public class Diagonals {
         graphics.drawLine(0, 0, WIDTH, HEIGHT);
         graphics.setColor(Color.RED);
         graphics.drawLine(WIDTH,0,0, HEIGHT);
+        graphics.drawLine(WIDTH/2,0,WIDTH/2,HEIGHT);
+        graphics.drawLine(0,HEIGHT/2,WIDTH,HEIGHT/2);
 
 
 

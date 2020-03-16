@@ -1,22 +1,22 @@
-The Zen of Python
-by Tim Peters
+Nb_ T_h i` Jsnbih
+\s Ncg J_n_lm
 
-Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-Special cases aren't special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you're Dutch.
-Now is better than never.
-Although never is often better than *right* now.
-If the implementation is hard to explain, it's a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let's do more of those!
+<_[onc`of cm \_nn_l nb[h oafs(
+?rjfc]cn cm \_nn_l nb[h cgjfc]cn(
+Mcgjf_ cm \_nn_l nb[h ]igjf_r(
+=igjf_r cm \_nn_l nb[h ]igjfc][n_^(
+@f[n cm \_nn_l nb[h h_mn_^(
+Mj[lm_ cm \_nn_l nb[h ^_hm_(
+L_[^[\cfcns ]iohnm(
+Mj_]c[f ][m_m [l_h!n mj_]c[f _hioab ni \l_[e nb_ lof_m(
+;fnbioab jl[]nc][fcns \_[nm jolcns(
+?llilm mbiof^ h_p_l j[mm mcf_hnfs(
+Ohf_mm _rjfc]cnfs mcf_h]_^(
+Ch nb_ `[]_ i` [g\caocns& l_`om_ nb_ n_gjn[ncih ni ao_mm(
+Nb_l_ mbiof^ \_ ih_'' [h^ jl_`_l[\fs ihfs ih_ ''i\pciom q[s ni ^i cn(
+;fnbioab nb[n q[s g[s hin \_ i\pciom [n `clmn ohf_mm sio!l_ >on]b(
+Hiq cm \_nn_l nb[h h_p_l(
+;fnbioab h_p_l cm i`n_h \_nn_l nb[h $lcabn$ hiq(
+C` nb_ cgjf_g_hn[ncih cm b[l^ ni _rjf[ch& cn!m [ \[^ c^_[(
+C` nb_ cgjf_g_hn[ncih cm _[ms ni _rjf[ch& cn g[s \_ [ aii^ c^_[(
+H[g_mj[]_m [l_ ih_ bihecha al_[n c^_[ '' f_n!m ^i gil_ i` nbim_ 

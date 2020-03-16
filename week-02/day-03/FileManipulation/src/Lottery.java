@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Lottery {
 
@@ -33,11 +34,18 @@ public class Lottery {
       allNumbers.add(fourthNumber);
       allNumbers.add(fifthNumber);
     }
-    HashMap occNumber = new HashMap();
+    HashMap<Integer,Integer> occNumber = new HashMap();
 
     for (int i = 1; i <= 90; i++) {
       occNumber.put(i,Collections.frequency(allNumbers,i));
     }
-    Collections.sort(allNumbers);
+    occNumber.entrySet()
+        .stream()
+        .sorted(Map.Entry.comparingByValue())
+        .forEach(System.out::println);
+
+    /*for (Map.Entry<Integer, Integer> item : occNumber.entrySet()) {
+      System.out.println(item.getKey() + " " + item.getValue());
+    }*/
   }
 }

@@ -19,15 +19,23 @@ public class EncodedLines {
         }
     }
     public static void decode() throws IOException {
-        Path filePath = Paths.get("encoded-lines.txt");
+        Path filePath = Paths.get("assets/encoded-lines.txt");
         List<String> lines = Files.readAllLines(filePath);
         List<String> newLines = new ArrayList<>();
         for (String line : lines) {
             String newline = "";
+            char space = ' ';
+            char orig;
+            char newChar;
             for (int i = 0; i < line.length(); i++) {
-                char orig = line.charAt(i);
-                char newChar = (char)(orig - 1);
-                newline += newChar;
+                if (line.charAt(i) == space){
+                    newChar = space;
+                    newline += newChar;
+                }else {
+                    orig = line.charAt(i);
+                    newChar = (char) (orig - 1);
+                    newline += newChar;
+                }
             }
             newLines.add(newline);
         }

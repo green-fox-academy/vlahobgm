@@ -17,15 +17,13 @@ public class Triangles {
         int x = WIDTH/2;
         int y = HEIGHT/4;
 
-        for (int i = 0; i < WIDTH/length; i++) {
-            for (int j = WIDTH/length-i; j <WIDTH/length; j++) {
-                graphics.drawLine(x+length*i, y, (x - length / 2)+length*i, (int) (y + length * line));
-                graphics.drawLine((x - length / 2)+length*i, (int) (y + length * line), (x + length / 2)+length*i, (int) (y + length * line));
-                graphics.drawLine((x + length / 2)+length*i, (int) (y + length * line), x+length*i, y);
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < 21; j++) {
+                graphics.drawLine(x+length*j, y, (x - length / 2)+length*j, (int) (y + length * line));
+                graphics.drawLine((x - length / 2)+length*j, (int) (y + length * line), (x + length / 2)+length*j, (int) (y + length * line));
+                graphics.drawLine((x + length / 2)+length*j, (int) (y + length * line), x+length*j, y);
 
             }
-
-
             x = x - length / 2;
             y = (int) (y + length * line);
         }

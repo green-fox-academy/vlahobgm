@@ -13,11 +13,29 @@ public class Triangles {
         //graphics.drawPolygon(x,y,3);
         //Math.sqrt()
         double line = Math.sqrt(3)/2;
+        int length = WIDTH/21;
+        int x = WIDTH/2;
+        int y = HEIGHT/4;
+
+        for (int i = 0; i < WIDTH/length; i++) {
+            for (int j = WIDTH/length-i; j <WIDTH/length; j++) {
+                graphics.drawLine(x+length*i, y, (x - length / 2)+length*i, (int) (y + length * line));
+                graphics.drawLine((x - length / 2)+length*i, (int) (y + length * line), (x + length / 2)+length*i, (int) (y + length * line));
+                graphics.drawLine((x + length / 2)+length*i, (int) (y + length * line), x+length*i, y);
+
+            }
+
+
+            x = x - length / 2;
+            y = (int) (y + length * line);
+        }
+
     }
 
+
     // Don't touch the code below
-    static int WIDTH = 320;
-    static int HEIGHT = 320;
+    static int WIDTH = 400;
+    static int HEIGHT = 500;
 
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Drawing");

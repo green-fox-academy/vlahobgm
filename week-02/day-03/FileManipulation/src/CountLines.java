@@ -20,7 +20,7 @@ public class CountLines {
 
     }
     public static int countLines() throws IOException {
-        Path path = Paths.get("test.txt");
+        Path path = Paths.get("assets/test.txt");
         List<String> lines = Files.readAllLines(path);
         int countLines = lines.size();
         return countLines;

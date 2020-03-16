@@ -16,7 +16,7 @@ public class ReversedLines {
     }
 
     public static void reversed() throws IOException {
-        Path filePath = Paths.get("reversed-lines.txt");
+        Path filePath = Paths.get("assets/reversed-lines.txt");
         List<String> lines = Files.readAllLines(filePath);
         List<String> newLines = new ArrayList<>();
         for (String line : lines) {

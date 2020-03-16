@@ -20,7 +20,7 @@ public class WriteSingleLine {
 
     }
     public static void writeFile() throws IOException {
-        Path filePath = Paths.get("my-file.txt");
+        Path filePath = Paths.get("assets/my-file.txt");
         List<String> content = new ArrayList<>();
         content.add("Béci");
         Files.write(filePath,content);

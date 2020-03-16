@@ -19,7 +19,7 @@ public class PrintEachLine {
     }
 
     public static void readFile() throws IOException {
-        Path path = Paths.get("my-file.txt");
+        Path path = Paths.get("assets/my-file.txt");
         List<String> lines = Files.readAllLines(path);
         for (String line : lines){
             System.out.println(line);

@@ -17,7 +17,7 @@ public class Doubled {
 
     }
     public static void duplicated() throws IOException {
-        Path filePath = Paths.get("src\\duplicated-chars.txt");
+        Path filePath = Paths.get("assets/duplicated-chars.txt");
         List<String> lines = Files.readAllLines(filePath);
         List<String> newLines = new ArrayList<>();
 

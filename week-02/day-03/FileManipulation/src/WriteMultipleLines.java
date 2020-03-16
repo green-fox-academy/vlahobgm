@@ -16,7 +16,7 @@ public class WriteMultipleLines {
         // into the file and each line should read 'apple'
         // The function should not raise any errors if it could not write the file.
 
-        writeMultiple("my-file.txt", "alma", 10);
+        writeMultiple("assets/my-file.txt", "alma", 10);
 
     }
     public static void writeMultiple(String path, String word, int number){

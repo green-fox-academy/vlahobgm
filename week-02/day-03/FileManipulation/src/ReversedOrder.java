@@ -16,7 +16,7 @@ public class ReversedOrder {
 
     }
     public static void reversedOrder() throws IOException {
-        Path filePath = Paths.get("reversed-order.txt");
+        Path filePath = Paths.get("assets/reversed-order.txt");
         List<String> lines = Files.readAllLines(filePath);
         List<String> newLines = new ArrayList<>();
         for (int i = lines.size()-1; i >= 0 ; i--) {

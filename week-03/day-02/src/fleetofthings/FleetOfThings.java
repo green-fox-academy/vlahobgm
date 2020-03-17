@@ -21,7 +21,7 @@ public class FleetOfThings {
     stand.complete();
     Thing eat = new Thing("Eat Lunch");
     eat.complete();
-    
+
     fleet.add(milk);
     fleet.add(obs);
     fleet.add(stand);

@@ -6,6 +6,7 @@ public class Counter {
 
   public Counter(int current){
     this.current = current;
+    defaultVal = current;
   }
   public Counter(){
   }

@@ -18,14 +18,13 @@ public class Farm {
   }
 
   public void breed(){
-      if (freeSpaces > 0) {
-        farm.add(new Animal());
-      }
+    if (freeSpaces > 0) {
+      farm.add(new Animal());
+    }
   }
 
   public void slaughter(){
-
-
+    
   }
 
 }

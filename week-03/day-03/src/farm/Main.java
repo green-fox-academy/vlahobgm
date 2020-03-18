@@ -2,8 +2,8 @@ package farm;
 
 public class Main {
   public static void main(String[] args) {
-    Animal dog = new Animal();
-    Animal cat = new Animal();
+    Animal dog = new Animal("dog");
+    Animal cat = new Animal("cat");
     dog.play();
     dog.drink();
     cat.eat();

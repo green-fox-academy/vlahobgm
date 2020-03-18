@@ -8,7 +8,7 @@ public class Farm {
   it has slots which defines the number of free places for animals
   breed() -> creates a new animal if there's place for it
   slaughter() -> removes the least hungry animal*/
-  
+
   List<Animal> farm;
   int freeSpaces;
   int maxSpace = 5;
@@ -20,7 +20,7 @@ public class Farm {
 
   public void breed(){
     if (freeSpaces > 0) {
-      farm.add(new Animal());
+      farm.add(new Animal("horse"));
     }
   }
 
@@ -30,7 +30,7 @@ public class Farm {
 
   public void printHunger(){
     for (Animal animals: farm) {
-      System.out.println(animals.hunger + " " + animals.thirst);
+      System.out.println(animals.hunger + " " + animals.thirst + " " + animals.name);
     }
   }
 

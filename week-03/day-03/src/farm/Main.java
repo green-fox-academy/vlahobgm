@@ -13,6 +13,9 @@ public class Main {
     farm1.farm.add(dog);
     farm1.farm.add(cat);
     farm1.breed();
+    farm1.breed();
+    farm1.farm.get(2).drink();
     System.out.println(farm1.farm.size());
+    farm1.printHunger();
   }
 }

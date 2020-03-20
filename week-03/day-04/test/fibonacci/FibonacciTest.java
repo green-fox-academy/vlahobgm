@@ -10,8 +10,8 @@ public class FibonacciTest {
   @Test
   public void calcMemberFibonacci() {
     Fibonacci fibo = new Fibonacci();
-    int index = 9;
-    assertEquals(34,fibo.calcMemberFibonacci(index));
+    int index = 6;
+    assertEquals(8,fibo.calcMemberFibonacci(index));
   }
-  
+
 }

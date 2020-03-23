@@ -1,9 +1,8 @@
 package theGardenApplication;
 
-public class Tree extends Garden{
-  private String color;
+public class Tree extends Plant{
 
-  public Tree(String color){
-    this.color = color;
+  public Tree(String color, int waterLevel){
+    super(color, waterLevel);
   }
 }

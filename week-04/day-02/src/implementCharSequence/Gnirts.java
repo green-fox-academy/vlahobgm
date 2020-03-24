@@ -9,7 +9,7 @@ public class Gnirts implements CharSequence{
 
   @Override
   public int length() {
-    return 0;
+    return gnirts.length();
   }
 
   @Override
@@ -19,6 +19,6 @@ public class Gnirts implements CharSequence{
 
   @Override
   public CharSequence subSequence(int start, int end) {
-    return null;
+    return gnirts.subSequence(start,end);
   }
 }

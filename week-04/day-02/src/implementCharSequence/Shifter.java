@@ -11,7 +11,7 @@ public class Shifter implements CharSequence{
 
   @Override
   public int length() {
-    return 0;
+    return shifter.length();
   }
 
   @Override
@@ -21,6 +21,6 @@ public class Shifter implements CharSequence{
 
   @Override
   public CharSequence subSequence(int start, int end) {
-    return null;
+    return shifter.subSequence(start,end);
   }
 }

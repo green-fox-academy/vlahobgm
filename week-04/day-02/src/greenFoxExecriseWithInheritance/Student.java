@@ -1,6 +1,6 @@
 package greenFoxExecriseWithInheritance;
 
-public class Student extends Person{
+public class Student extends Person implements Cloneable{
   private String previousOrganization;
   private int skippedDays;
 
@@ -31,5 +31,10 @@ public class Student extends Person{
     super();
     this.previousOrganization = "The School of Life";
     this.skippedDays = 0;
+  }
+
+  @Override
+  public Student clone()throws CloneNotSupportedException{
+    return (Student)super.clone();
   }
 }

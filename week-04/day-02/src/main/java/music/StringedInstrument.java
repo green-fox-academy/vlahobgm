@@ -1,8 +1,12 @@
 package main.java.music;
 
-public abstract class StringedInstrument extends Instrument{
-  private int numberOfStrings;
+abstract class StringedInstrument extends Instrument{
+  protected int numberOfStrings;
 
-  public abstract void sound();
+  abstract void sound();
 
+  @Override
+  public void play() {
+    sound();
+  }
 }

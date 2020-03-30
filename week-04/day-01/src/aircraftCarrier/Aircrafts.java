@@ -4,6 +4,7 @@ public class Aircrafts {
   protected int maxAmmo;
   protected int baseDamage;
   protected int currentAmmo;
+  protected String type;
 
   public int getMaxAmmo() {
     return maxAmmo;
@@ -35,11 +36,28 @@ public class Aircrafts {
   }
 
   public int refill(int refillAmount) {
-    this.currentAmmo = this.maxAmmo;
-    return refillAmount - this.maxAmmo;
+    if (refillAmount < this.maxAmmo) {
+      this.currentAmmo += refillAmount;
+      return this.currentAmmo;
+    } else {
+      this.currentAmmo = this.maxAmmo;
+      return refillAmount - this.maxAmmo;
+    }
   }
 
-  public 
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getType() {
+    return this.type;
+  }
+  /*getStatus
+  It should return a string like: Type F35, Ammo: 10, Base Damage: 50, All Damage: 500*/
+  public String getStatus() {
+    return "Type " + getType() + ", Ammo: " + this.maxAmmo + ", Base Damage: " + getBaseDamage()
+        + ", All" + " Damage: " + fight();
+  }
 }
 
   /*Methods
@@ -53,7 +71,6 @@ public class Aircrafts {
       Eg. Filling an empty F35 with 300 would completely fill the storage of the aircraft and would return the remaining 288
     getType
       It should return the type of the aircraft as a string
-    getStatus
-      It should return a string like: Type F35, Ammo: 10, Base Damage: 50, All Damage: 500
+
     isPriority
       It should return if the aircraft is priority in the ammo fill queue. It's true for F35 and false for F16*/

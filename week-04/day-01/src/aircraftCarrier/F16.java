@@ -6,5 +6,6 @@ public class F16 extends Aircrafts{
     super();
     setMaxAmmo(8);
     setBaseDamage(30);
+    setType("F16");
   }
 }

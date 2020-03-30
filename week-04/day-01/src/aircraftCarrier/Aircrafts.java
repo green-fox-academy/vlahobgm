@@ -36,9 +36,9 @@ public class Aircrafts {
   }
 
   public int refill(int refillAmount) {
-    if (refillAmount < this.maxAmmo) {
+    if (refillAmount <= this.maxAmmo) {
       this.currentAmmo += refillAmount;
-      return this.currentAmmo;
+      return refillAmount - this.currentAmmo;
     } else {
       this.currentAmmo = this.maxAmmo;
       return refillAmount - this.maxAmmo;

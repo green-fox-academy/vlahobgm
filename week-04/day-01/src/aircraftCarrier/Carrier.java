@@ -29,23 +29,18 @@ public class Carrier extends Aircrafts{
     if (this.initialAmmo == 0) {
       throw new Exception("No ammo to fill...");
     } else {
-      List<Aircrafts> aircraftsSorted = new ArrayList<>();
-      for (Aircrafts aircraft: aircraftsList) {
-        if (aircraftsSorted.size() == 0) {
-          aircraftsSorted.add(aircraft);
-        } else if (aircraft.isPriority()) {
-          aircraftsSorted.add(0,aircraft);
-        } else {
-          aircraftsSorted.add(aircraftsSorted.size()-1,aircraft);
+
+      for (int i = 0; i < aircraftsList.size(); i++) {
+        if (aircraftsList.get(i).isPriority()) {
+          this.initialAmmo = aircraftsList.get(i).refill(this.initialAmmo);
         }
       }
-      aircraftsList.clear();
-      aircraftsList.addAll(aircraftsSorted);
+      for (int i = 0; i < aircraftsList.size(); i++) {
+        if (!aircraftsList.get(i).isPriority()) {
+          this.initialAmmo = aircraftsList.get(i).refill(this.initialAmmo);
+        }
+      }
     }
-    /*for (Aircrafts aircraft: aircraftsList) {
-      aircraft.refill(this.initialAmmo);
-
-    }*/
   }
 }
 /*

@@ -25,11 +25,27 @@ public class Carrier extends Aircrafts{
   It should fill all the aircraft with ammo and subtract the needed ammo from the ammo storage
   If there is not enough ammo then it should start to fill the aircrafts with priority first
   If there is no ammo when this method is called, it should throw an exception*/
-  public void fill() {
-    for (Aircrafts aircraft: aircraftsList) {
+  public void fill() throws Exception {
+    if (this.initialAmmo == 0) {
+      throw new Exception("No ammo to fill...");
+    } else {
+      List<Aircrafts> aircraftsSorted = new ArrayList<>();
+      for (Aircrafts aircraft: aircraftsList) {
+        if (aircraftsSorted.size() == 0) {
+          aircraftsSorted.add(aircraft);
+        } else if (aircraft.isPriority()) {
+          aircraftsSorted.add(0,aircraft);
+        } else {
+          aircraftsSorted.add(aircraftsSorted.size()-1,aircraft);
+        }
+      }
+      aircraftsList.clear();
+      aircraftsList.addAll(aircraftsSorted);
+    }
+    /*for (Aircrafts aircraft: aircraftsList) {
       aircraft.refill(this.initialAmmo);
 
-    }
+    }*/
   }
 }
 /*

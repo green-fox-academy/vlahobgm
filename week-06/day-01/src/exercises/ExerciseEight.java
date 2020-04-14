@@ -11,7 +11,11 @@ public class ExerciseEight {
     String word = characterList.stream()
         .map(String::valueOf)
         .collect(Collectors.joining());
-
     System.out.println(word);
+
+    List<String> characterList2 = Arrays.asList("T", "o", "m", "a", "t", "o");
+    String word2 = characterList2.stream()
+        .reduce("", (partialString, element) -> partialString + element);
+    System.out.println(word2);
   }
 }

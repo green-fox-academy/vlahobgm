@@ -13,6 +13,6 @@ public class ExerciseNine {
     Map<String,Long> frequencies = Arrays.stream(word.toLowerCase().split(""))
         .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
     frequencies.forEach((k,v) -> System.out.println(k + " occurs:" + v + " times"));
-    
+
   }
 }

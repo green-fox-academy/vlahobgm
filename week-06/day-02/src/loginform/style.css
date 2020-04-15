@@ -1,0 +1,44 @@
+body {
+    background-color: #ebebeb;
+}
+
+form {
+    margin: auto;
+    width: 500px;
+    height: 400px;
+    background-color: white;
+}
+
+legend {
+    margin-left: 70px;
+    font-size: 30px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+input{
+    margin: 10px 70px 40px 70px ;
+}
+label {
+    margin: 40px 70px 10px 70px;
+    font-size: 10px;
+}
+
+input[type=submit] {
+    background-color: black;
+    color: white;
+    border: 0px;
+    border-radius: 20px;
+    width: 120px;
+    height: 40px;
+}
+
+input[type=text], input[type=password] {
+    width: 360px;
+    height: 40px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    font-size: 30px;
+    display: block;
+}
+

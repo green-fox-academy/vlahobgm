@@ -1,0 +1,94 @@
+body {
+    background-color: #dddddd;
+    font-family: Verdana;
+}
+form {
+    background-color: #ffffff;
+    margin: auto;
+    width: 800px;
+    height: 600px;
+    box-shadow: 5px 5px 3px #bebebe;
+    position: relative;
+}
+input,legend {
+    display: block;
+    margin: 20px 70px;
+}
+legend {
+
+}
+
+legend {
+    font-size: 32px;
+}
+
+input[type=text], input[type=password] {
+    width: 300px;
+    height: 45px;
+    border: 0;
+    border-bottom: 2px solid #e9e9e9;
+    font-size: 18px;
+}
+
+#facebook {
+    background-color: #32508e;
+    width: 300px;
+    height: 45px;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: 18px;
+    position: absolute;
+    left: 370px;
+    top: 100px;
+}
+#twitter {
+    background-color: #55acee;
+    width: 300px;
+    height: 45px;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: 18px;
+    position: absolute;
+    left: 370px;
+    top: 165px;
+}
+#google {
+    background-color: #dd4b39;
+    width: 300px;
+    height: 45px;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: 18px;
+    position: absolute;
+    left: 370px;
+    top: 230px;
+}
+#or {
+    background-color: #dddddd;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 50px;
+    box-shadow: 3px 3px 2px #bebebe;
+    font-size: 18px;
+    position: absolute;
+    left: 310px;
+    top: 160px;
+}
+input[type=submit] {
+    background-color: #16a085;
+    width: 150px;
+    height: 45px;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: 18px;
+    margin: 70px 70px;
+}
+input:focus {
+    outline: none;
+    border-bottom: 2px solid #16a085;
+}

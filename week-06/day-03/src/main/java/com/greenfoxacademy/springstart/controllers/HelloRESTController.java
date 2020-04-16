@@ -1,5 +1,6 @@
-package com.greenfoxacademy.springstart;
+package com.greenfoxacademy.springstart.controllers;
 
+import com.greenfoxacademy.springstart.Greeting;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

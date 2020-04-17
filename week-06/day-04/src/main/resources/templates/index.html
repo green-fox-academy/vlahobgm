@@ -15,20 +15,22 @@
         <a href="/average-stock">AVERAGE STOCK</a>
         <a href="/most-expensive">MOST EXPENSIVE AVAILABLE</a>
     </div>
-    <form action="">
+    <form action="/search" method="post">
         <legend>Search for:</legend>
-        <input type="text" placeholder="..something like nike" autofocus>
+        <input type="text" name="search" placeholder="..something like nike" autofocus>
         <input type="submit" value="Search">
     </form>
     <table>
         <tr>
             <th>Name</th>
+            <th>Type</th>
             <th>Description</th>
             <th>Price</th>
             <th>Quantity of stock</th>
         </tr>
         <tr class="items" th:each="item: ${items}">
             <td id="name" th:text="${item.getName()}"></td>
+            <td id="type" th:text="${item.getType()}"></td>
             <td id="description" th:text="${item.getDescription()}"></td>
             <td id="price" th:text="${item.getPrice()}"></td>
             <td id="qty" th:text="${item.getQuantityOfStock()}"></td>

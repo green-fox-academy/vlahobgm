@@ -15,7 +15,11 @@
     <a href="/average-stock">AVERAGE STOCK</a>
     <a href="/most-expensive">MOST EXPENSIVE AVAILABLE</a>
 </div>
-
+<form action="/search" method="post">
+    <legend>Search for:</legend>
+    <input type="text" name="search" placeholder="..something like nike" autofocus>
+    <input type="submit" value="Search">
+</form>
 <p th:text="'Average stock: ' + ${items}"></p>
 
 

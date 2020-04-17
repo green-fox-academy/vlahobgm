@@ -72,7 +72,7 @@ th {
     font-size: 28px;
 }
 
-th:nth-child(4) {
+th:nth-child(5) {
     border: 0;
 }
 
@@ -83,7 +83,7 @@ input:focus {
     height: 100px;
     font-family: "Comic Sans MS";
 }
-#name {
+#name, #type {
     font-size: 28px;
 }
 #description {

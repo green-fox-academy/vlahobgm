@@ -1,13 +1,24 @@
 body {
     margin: 40px 300px;
 }
-h1 {
+
+.h1-container {
+    display: flex;
+    justify-content: space-between;
     font-family: "Comic Sans MS";
     font-size: 50px;
     color: #5cd3e3;
     border-bottom: 2px solid #5cd3e3;
 }
-a {
+
+#more, #webshop {
+    cursor: pointer;
+    text-decoration: none;
+    color: #5cd3e3;
+}
+
+
+.flex-container a {
     border: 0;
     border-radius: 5px;
     background-color: #f44336;

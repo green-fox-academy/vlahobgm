@@ -16,13 +16,14 @@ public class WebShopController {
   List<ShopItem> shopItemList = Arrays.asList(
       new ShopItem("Running shoes", "Clothes and Shoes","Nike running shoes for every day sport",
           1000, 5),
-      new ShopItem("Printer", "Electronics", "Some HP printer that will print pages", 3000, 2),
-      new ShopItem("Coca Cola", "Beverages and Snacks", "0.5l standard coke", 25, 0),
-      new ShopItem("Wokin", "Beverages and Snacks", "Chicken with fried rice and WOKIN sauce", 119, 100),
-      new ShopItem("T-shirt", "Clothes and Shoes", "Blue with a corgi on bike", 300, 1)
+      new ShopItem("Printer", "Electronics", "Some HP printer that will print pages", 3000.0, 2),
+      new ShopItem("Coca Cola", "Beverages and Snacks", "0.5l standard coke", 25.0, 0),
+      new ShopItem("Wokin", "Beverages and Snacks", "Chicken with fried rice and WOKIN sauce",
+          119.0, 100),
+      new ShopItem("T-shirt", "Clothes and Shoes", "Blue with a corgi on bike", 300.0, 1)
   );
 
-  @RequestMapping(value = "", method = RequestMethod.GET)
+  @RequestMapping(value = "/webshop", method = RequestMethod.GET)
   public String greeting(Model model) {
     model.addAttribute("items", shopItemList);
     return "index";
@@ -39,7 +40,7 @@ public class WebShopController {
   @RequestMapping(value = "/cheapest-first", method = RequestMethod.GET)
   public String cheapestFirst(Model model) {
     model.addAttribute("items", shopItemList.stream()
-        .sorted(Comparator.comparingLong(ShopItem::getPrice))
+        .sorted(Comparator.comparingDouble(ShopItem::getPrice))
         .collect(Collectors.toList()));
     return "index";
   }

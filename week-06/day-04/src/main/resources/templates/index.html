@@ -7,7 +7,10 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>My Shop</h1>
+    <div class="h1-container">
+        <a id="webshop" href="/webshop">My Shop</a>
+        <a id="more" href="/more-filters">More >></a>
+    </div>
     <div class="flex-container">
         <a href="/only-available">ONLY AVAILABLE</a>
         <a href="/cheapest-first">CHEAPEST FIRST</a>
@@ -32,7 +35,7 @@
             <td id="name" th:text="${item.getName()}"></td>
             <td id="type" th:text="${item.getType()}"></td>
             <td id="description" th:text="${item.getDescription()}"></td>
-            <td id="price" th:text="${item.getPrice()}"></td>
+            <td id="price" th:text="${item.getPrice()} + ' Kc'"></td>
             <td id="qty" th:text="${item.getQuantityOfStock()}"></td>
         </tr>
     </table>

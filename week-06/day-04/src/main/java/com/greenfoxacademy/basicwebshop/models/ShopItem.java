@@ -3,11 +3,11 @@ package com.greenfoxacademy.basicwebshop.models;
 public class ShopItem {
   private String name;
   private String description;
-  private long price;
+  private double price;
   private int quantityOfStock;
   private String type;
 
-  public ShopItem(String name, String type, String description, long price, int quantityOfStock) {
+  public ShopItem(String name, String type, String description, double price, int quantityOfStock) {
     this.name = name;
     this.description = description;
     this.price = price;
@@ -23,7 +23,7 @@ public class ShopItem {
     return description;
   }
 
-  public long getPrice() {
+  public double getPrice() {
     return price;
   }
 

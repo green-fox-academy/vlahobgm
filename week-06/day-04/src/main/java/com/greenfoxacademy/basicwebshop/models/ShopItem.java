@@ -6,13 +6,16 @@ public class ShopItem {
   private double price;
   private int quantityOfStock;
   private String type;
+  private String priceType;
 
-  public ShopItem(String name, String type, String description, double price, int quantityOfStock) {
+  public ShopItem(String name, String type, String description, double price,
+                  int quantityOfStock) {
     this.name = name;
     this.description = description;
     this.price = price;
     this.quantityOfStock = quantityOfStock;
     this.type = type;
+    this.priceType = "Kc";
   }
 
   public String getName() {
@@ -33,5 +36,13 @@ public class ShopItem {
 
   public String getType() {
     return type;
+  }
+
+  public String getPriceType() {
+    return priceType;
+  }
+
+  public void setPriceType(String priceType) {
+    this.priceType = priceType;
   }
 }

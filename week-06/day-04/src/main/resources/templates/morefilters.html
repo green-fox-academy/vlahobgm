@@ -15,7 +15,7 @@
     <a href="/filter-by-type/clothes and shoes" name="filter">CLOTHERS AND SHOES</a>
     <a href="/filter-by-type/electronics" name="filter">ELECTRONICS</a>
     <a href="/filter-by-type/beverages and snacks" name="filter">BEVERAGES AND SNACKS</a>
-    <a href="/average-stock">EURO</a>
+    <a href="/price-in-eur">EURO</a>
     <a href="/most-expensive">ORIGINAL CURRENCY</a>
 </div>
 
@@ -38,7 +38,7 @@
         <td id="name" th:text="${item.getName()}"></td>
         <td id="type" th:text="${item.getType()}"></td>
         <td id="description" th:text="${item.getDescription()}"></td>
-        <td id="price" th:text="${item.getPrice()} + ' Kc'"></td>
+        <td id="price" th:text="${item.getPrice()} + ' ' + ${item.getPriceType()}"></td>
         <td id="qty" th:text="${item.getQuantityOfStock()}"></td>
     </tr>
 </table>

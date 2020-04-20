@@ -2,6 +2,7 @@ package com.greenfoxacademy.basicwebshop.controllers;
 
 import com.greenfoxacademy.basicwebshop.models.ShopItem;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -17,7 +18,8 @@ public class WebShopController {
   List<ShopItem> shopItemList = Arrays.asList(
       new ShopItem("Running shoes", "Clothes and Shoes","Nike running shoes for every day sport",
           1000, 5),
-      new ShopItem("Printer", "Electronics", "Some HP printer that will print pages", 3000.0, 2),
+      new ShopItem("Printer", "Electronics", "Some HP printer that will print pages", 3000.0,
+          2),
       new ShopItem("Coca Cola", "Beverages and Snacks", "0.5l standard coke", 25.0, 0),
       new ShopItem("Wokin", "Beverages and Snacks", "Chicken with fried rice and WOKIN sauce",
           119.0, 100),
@@ -92,6 +94,19 @@ public class WebShopController {
   public String filterByType(Model model, @PathVariable("type") String type) {
     model.addAttribute("items", shopItemList.stream()
         .filter(item -> item.getType().toLowerCase().contentEquals(type.toLowerCase()))
+        .collect(Collectors.toList()));
+    return "morefilters";
+  }
+
+  @RequestMapping(value = "/price-in-eur", method = RequestMethod.GET)
+  public String filterEuro(Model model) {
+    model.addAttribute("items", shopItemList.stream()
+        .map(item -> {
+          ShopItem n = new ShopItem(item.getName(), item.getType(), item.getDescription(),
+              item.getPrice(), item.getQuantityOfStock());
+          n.setPriceType("E");
+          return n;
+        })
         .collect(Collectors.toList()));
     return "morefilters";
   }

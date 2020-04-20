@@ -35,7 +35,7 @@
             <td id="name" th:text="${item.getName()}"></td>
             <td id="type" th:text="${item.getType()}"></td>
             <td id="description" th:text="${item.getDescription()}"></td>
-            <td id="price" th:text="${item.getPrice()} + ' Kc'"></td>
+            <td id="price" th:text="${item.getPrice()} + ' ' + ${item.getPriceType()}"></td>
             <td id="qty" th:text="${item.getQuantityOfStock()}"></td>
         </tr>
     </table>

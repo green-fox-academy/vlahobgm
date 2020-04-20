@@ -1,0 +1,108 @@
+body {
+    margin: 40px 300px;
+}
+
+.h1-container {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Comic Sans MS";
+    font-size: 50px;
+    color: #5cd3e3;
+    border-bottom: 2px solid #5cd3e3;
+}
+
+#more, #webshop {
+    cursor: pointer;
+    text-decoration: none;
+    color: #5cd3e3;
+}
+
+
+.flex-container a {
+    border: 0;
+    border-radius: 5px;
+    background-color: #f44336;
+    color: white;
+    height: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px 10px;
+    text-align: center;
+}
+p {
+    font-family: "Comic Sans MS";
+    font-size: 34px;
+}
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+legend {
+    color: #ffc3b7;
+    font-size: 22px;
+}
+
+input[type=text], input[type=button] {
+    height: 60px;
+    border: 3px solid #f44336;
+    font-size: 28px;
+    border-radius: 10px;
+}
+
+input[type=button] {
+    background-color: #f44336;
+    color: white;
+    width: 200px;
+    float: right;
+    cursor: pointer;
+}
+input[type=text] {
+    width: 40%;
+}
+
+table {
+    width: 100%;
+    margin-top: 30px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+
+}
+th {
+    background-color: #62efff;
+    height: 120px;
+    border-right: 3px solid white;
+    font-size: 28px;
+}
+
+th:nth-child(5) {
+    border: 0;
+}
+
+input:focus {
+    outline: none;
+}
+.items {
+    height: 100px;
+    font-family: "Comic Sans MS";
+}
+#name, #type {
+    font-size: 28px;
+}
+#description {
+    font-size: 18px;
+}
+#price, #qty {
+    text-align: center;
+    font-size: 30px;
+}

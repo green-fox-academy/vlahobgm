@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/css/stylemorefilter.css">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="h1-container">
+    <a id="webshop" href="/webshop">My Shop</a>
+    <a id="more" href="/more-filters">More >></a>
+</div>
+<div class="flex-container">
+    <a href="/filter-by-type/clothes and shoes" name="filter">CLOTHERS AND SHOES</a>
+    <a href="/filter-by-type/electronics" name="filter">ELECTRONICS</a>
+    <a href="/filter-by-type/beverages and snacks" name="filter">BEVERAGES AND SNACKS</a>
+    <a href="/average-stock">EURO</a>
+    <a href="/most-expensive">ORIGINAL CURRENCY</a>
+</div>
+
+<form action="/search" method="post">
+    <input type="button" value="Above">
+    <input type="button" value="Below">
+    <input type="button" value="Exactly">
+    <legend>Filter by price:</legend>
+    <input type="text" name="search" placeholder="...e.g.: 300" autofocus>
+</form>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity of stock</th>
+    </tr>
+    <tr class="items" th:each="item: ${items}">
+        <td id="name" th:text="${item.getName()}"></td>
+        <td id="type" th:text="${item.getType()}"></td>
+        <td id="description" th:text="${item.getDescription()}"></td>
+        <td id="price" th:text="${item.getPrice()} + ' Kc'"></td>
+        <td id="qty" th:text="${item.getQuantityOfStock()}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

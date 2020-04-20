@@ -8,6 +8,7 @@ import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,6 +23,7 @@ public class WebShopController {
           119.0, 100),
       new ShopItem("T-shirt", "Clothes and Shoes", "Blue with a corgi on bike", 300.0, 1)
   );
+
 
   @RequestMapping(value = "/webshop", method = RequestMethod.GET)
   public String greeting(Model model) {
@@ -78,6 +80,20 @@ public class WebShopController {
             item.getDescription().toLowerCase().contains(search.toLowerCase()))
         .collect(Collectors.toList()));
     return "index";
+  }
+
+  @RequestMapping(value = "/more-filters", method = RequestMethod.GET)
+  public String moreFilters(Model model) {
+    model.addAttribute("items", shopItemList);
+    return "morefilters";
+  }
+
+  @RequestMapping(value = "/filter-by-type/{type}", method = RequestMethod.GET)
+  public String filterByType(Model model, @PathVariable("type") String type) {
+    model.addAttribute("items", shopItemList.stream()
+        .filter(item -> item.getType().toLowerCase().contentEquals(type.toLowerCase()))
+        .collect(Collectors.toList()));
+    return "morefilters";
   }
 
 }

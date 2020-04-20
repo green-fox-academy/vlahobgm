@@ -17,5 +17,10 @@ public class ExerciseEight {
     String word2 = characterList2.stream()
         .reduce("", (partialString, element) -> partialString + element);
     System.out.println(word2);
+
+    List<String> characterList3 = Arrays.asList("T", "o", "m", "a", "t", "o");
+    String word3 = characterList3.stream()
+        .reduce("", String::concat);
+    System.out.println(word3);
   }
 }

@@ -1,0 +1,34 @@
+table {
+    margin: auto;
+    width: 800px;
+}
+
+table, th, td {
+    text-align: left;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 20px;
+    font-family: "Comic Sans MS";
+    text-space: 0.5em;
+}
+
+th {
+    background-color: #6B120E;
+    color: #fcf03c;
+    font-size: 28px;
+    border-bottom: 3px solid #fcf03c;
+}
+
+td {
+    font-size: 18px;
+    color: #BB3D02;
+}
+
+tr:nth-child(odd) {
+    background-color: #F95404;
+}
+tr:nth-child(even) {
+    background-color: #FF9B15;
+}

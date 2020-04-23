@@ -32,6 +32,7 @@ public class UsefulUtilitiesController {
   @GetMapping("/useful/email")
   public String isValidEmail(Model model, @RequestParam String email) {
     model.addAttribute("valid", utilityService.validateEmail(email));
+    model.addAttribute("givenEmail", email);
     return "index";
   }
 }

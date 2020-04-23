@@ -40,13 +40,18 @@ public class UtilityService {
   }
 
   public boolean validateEmail(String givenEmail) {
-    String regex = "^(.+)@(.+)$";
+    if (givenEmail.contains("@") && givenEmail.contains(".")) {
+      return true;
+    } else {
+      return false;
+    }
+    /*String regex = "^(.+)@(.+)$";
     Pattern pattern = Pattern.compile(regex);
     Matcher matcher = pattern.matcher(givenEmail);
     if (matcher.matches()) {
       return true;
     } else {
       return false;
-    }
+    }*/
   }
 }

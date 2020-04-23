@@ -6,6 +6,6 @@ public class BlueColor implements MyColor {
 
   @Override
   public void printColor(Printer printer) {
-    System.out.println("It is blue color...");
+    printer.log("It is blue...");
   }
 }

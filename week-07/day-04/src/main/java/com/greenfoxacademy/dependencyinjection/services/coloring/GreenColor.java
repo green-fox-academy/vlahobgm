@@ -8,6 +8,6 @@ public class GreenColor implements MyColor {
 
   @Override
   public void printColor(Printer printer) {
-    System.out.println("It is green color...");
+    printer.log("It is green...");
   }
 }

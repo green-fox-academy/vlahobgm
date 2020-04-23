@@ -3,6 +3,8 @@ package com.greenfoxacademy.dependencyinjection.services.usefulutilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -35,5 +37,16 @@ public class UtilityService {
       result += (char) (((int) text.charAt(i) + number - offset) % 26 + offset);
     }
     return result;
+  }
+
+  public boolean validateEmail(String givenEmail) {
+    String regex = "^(.+)@(.+)$";
+    Pattern pattern = Pattern.compile(regex);
+    Matcher matcher = pattern.matcher(givenEmail);
+    if (matcher.matches()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

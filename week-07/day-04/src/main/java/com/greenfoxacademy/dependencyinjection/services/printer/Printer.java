@@ -1,4 +1,4 @@
-package com.greenfoxacademy.dependencyinjection.services;
+package com.greenfoxacademy.dependencyinjection.services.printer;
 
 import java.time.LocalDateTime;
 import org.springframework.stereotype.Service;

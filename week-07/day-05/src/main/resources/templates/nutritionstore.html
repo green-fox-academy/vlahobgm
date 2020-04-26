@@ -11,17 +11,17 @@
     <li><a href="/nutritionStore">Nutrition Store</a></li>
     <li><a href="/trickCenter">Trick Center</a></li>
     <li><a href="/actionHistory">Action History</a></li>
-</ul><br>
-<img th:src="@{/images/greenfox.png}"><br>
-<div th:object="${selectedFox}">
-<p>This is <span th:text="*{name}"></span>. Currently living on <span
-        th:text="*{food.getName()}"></span> and <span th:text="*{drink.getName()}"></span>. He
-    knows 2 tricks
-    .</p>
-</div>
-<h1>Known tricks</h1>
-<ul>
-    <li><a href="#"></a></li>
 </ul>
+<form action="">
+    <label for="food">Food</label>
+    <select field="" id="food">
+        <option value="" text=""></option>
+    </select>
+    <label for="drink">Food</label>
+    <select field="" id="drink">
+        <option value="" text=""></option>
+    </select>
+    <button type="submit">Change</button>
+</form>
 </body>
 </html>

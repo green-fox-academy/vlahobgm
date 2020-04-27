@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1>Todos for today:</h1>
+<table>
+    <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>urgent</th>
+        <th>done</th>
+    </tr>
+    <tr th:each="todo : ${todos}">
+        <td th:text="${todo.id}"></td>
+        <td th:text="${todo.title}"></td>
+        <td th:text="${todo.urgent}"></td>
+        <td th:text="${todo.done}"></td>
+    </tr>
+</table>
+
+<form th:action="@{/todo/register}" th:object="${todo}" method="post">
+    <label>new todo</label>
+    <input type="text" th:field="*{title}">
+    <button type="submit">add</button>
+</form>
+
+</body>
+</html>

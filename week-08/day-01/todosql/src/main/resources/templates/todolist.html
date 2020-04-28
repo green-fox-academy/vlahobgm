@@ -2,31 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>Thymeleaf Exercise #</title>
-    <link rel="stylesheet" th:href="@{/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
     <meta charset="utf-8" />
 </head>
 <body>
-<h1>Todos for today:</h1>
+<h1>TODOS FOR TODAY:</h1>
+<div class="link">
+    <a href="/todo/add">Add new todo</a>
+</div>
 <table>
     <tr>
-        <th>id</th>
-        <th>title</th>
-        <th>urgent</th>
-        <th>done</th>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>DONE</th>
+        <th>URGENT</th>
     </tr>
     <tr th:each="todo : ${todos}">
         <td th:text="${todo.id}"></td>
         <td th:text="${todo.title}"></td>
-        <td th:text="${todo.urgent}"></td>
         <td th:text="${todo.done}"></td>
+        <td th:text="${todo.urgent}"></td>
     </tr>
 </table>
-
-<form th:action="@{/todo/register}" th:object="${todo}" method="post">
-    <label>new todo</label>
-    <input type="text" th:field="*{title}">
-    <button type="submit">add</button>
-</form>
 
 </body>
 </html>

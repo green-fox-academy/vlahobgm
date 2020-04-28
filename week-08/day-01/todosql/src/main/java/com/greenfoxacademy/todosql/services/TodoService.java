@@ -4,6 +4,7 @@ import com.greenfoxacademy.todosql.models.Todo;
 import com.greenfoxacademy.todosql.repositories.TodoRepository;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +29,21 @@ public class TodoService {
 
   public Iterable<Todo> getTodos() {
     return todoRepository.findAll();
+  }
+
+  public List<Todo> isActive(Boolean isActive) {
+    List<Todo> returnList = new ArrayList<>();
+      todoRepository.findAll()
+          .forEach(returnList::add);
+      if (isActive){
+        return returnList.stream()
+            .filter(todo -> !todo.isDone())
+            .collect(Collectors.toList());
+      } else {
+        return returnList.stream()
+            .filter(todo -> todo.isDone())
+            .collect(Collectors.toList());
+      }
+
   }
 }

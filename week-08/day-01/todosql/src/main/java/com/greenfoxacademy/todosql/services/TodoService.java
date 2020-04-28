@@ -4,6 +4,7 @@ import com.greenfoxacademy.todosql.models.Todo;
 import com.greenfoxacademy.todosql.repositories.TodoRepository;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,5 +46,10 @@ public class TodoService {
             .collect(Collectors.toList());
       }
 
+  }
+
+  public void deleteTodo(Long id) {
+    Optional<Todo> selectedTodo = todoRepository.findById(id);
+    todoRepository.delete(selectedTodo.get());
   }
 }

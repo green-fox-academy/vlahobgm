@@ -24,16 +24,16 @@ public class AppController {
         this.service = service;
     }
 
-    @GetMapping("")
+    @GetMapping(value = "")
     public String index(Model model) {
+        model.addAttribute("users", service.getAll());
         model.addAttribute("new_user", new User());
-        model.addAttribute("yolo", service.getAll());
         return "main";
     }
 
-    @PostMapping("")
+    @PostMapping(value = "/add")
     public String create(@ModelAttribute User user) {
-        service.save(user);
-        return "redirect:/";
+        service.addUser(user);
+        return "redirect:/app";
     }
 }

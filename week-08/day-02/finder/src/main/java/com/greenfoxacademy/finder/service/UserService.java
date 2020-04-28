@@ -21,7 +21,7 @@ public class UserService {
         return users;
     }
 
-    public void save(User user) {
+    public void addUser(User user) {
         users.add(user);
     }
 

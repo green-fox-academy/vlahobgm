@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+}
+.newpost {
+    text-align: center;
+}
+
+.posts table {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}

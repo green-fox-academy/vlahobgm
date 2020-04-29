@@ -1,6 +1,7 @@
 package com.greenfoxacademy.reddit.controllers;
 
 import com.greenfoxacademy.reddit.models.Post;
+import com.greenfoxacademy.reddit.models.User;
 import com.greenfoxacademy.reddit.services.PostService;
 import com.greenfoxacademy.reddit.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
@@ -26,7 +29,7 @@ public class MainController {
 
   @GetMapping("/")
   public String mainPage(Model model) {
-    model.addAttribute("posts", postService.returnAllPosts());
+    model.addAttribute("posts", postService.returnAllPostsDescByVotes());
     return "index";
   }
 
@@ -46,6 +49,18 @@ public class MainController {
   public String votingUp(@PathVariable("id") long id,@PathVariable("vote") String vote) {
     postService.changeVote(vote,id);
     return "redirect:/";
+  }
+
+  @GetMapping("/login")
+  public String submitUser(Model model) {
+    model.addAttribute("new_user", new User());
+    return "login";
+  }
+
+  @PostMapping("/login")
+  public String createUser(@ModelAttribute User user) {
+    userService.addUser(user);
+    return "redirect:";
   }
 
 }

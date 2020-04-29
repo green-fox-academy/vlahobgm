@@ -19,10 +19,12 @@ public class PostServiceImpl implements PostService{
   }
 
   @Override
-  public List<Post> returnAllPosts() {
+  public List<Post> returnAllPostsDescByVotes() {
     List<Post> posts = new ArrayList<>();
-    postRepository.findAll()
+    /*postRepository.findAll()
         .forEach(posts::add);
+    return posts;*/
+    postRepository.getAllPostsByDescendingByVotes().forEach(posts::add);
     return posts;
   }
 
@@ -33,9 +35,9 @@ public class PostServiceImpl implements PostService{
 
   @Override
   public void changeVote(String vote, Long id) {
-    Optional<Post> optionalPost = postRepository.findById(id);
-    if (optionalPost.isPresent()) {
-      Post post = optionalPost.get();
+    Optional<Post> updatedPost = postRepository.findById(id);
+    if (updatedPost.isPresent()) {
+      Post post = updatedPost.get();
       if (vote.equals("+")) {
         post.setVotes(post.getVotes()+1);
       } else if (vote.equals("-")) {

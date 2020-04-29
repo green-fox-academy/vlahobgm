@@ -12,12 +12,12 @@
 
 <div class="posts">
     <table>
-        <tr>
-            <td>votes</td>
-            <td>up-vote</td>
-            <td>down-vote</td>
-            <td>post title</td>
-            <td>timestamp</td>
+        <tr th:each="post : ${posts}">
+            <td th:text="${post.votes}">votes</td>
+            <td><a th:href="@{|voting/${post.id}/+|}">+</a></td>
+            <td><a th:href="@{|voting/${post.id}/-|}">-</a></td>
+            <td><a th:href="${post.url}" th:text="${post.title}">post title</a></td>
+            <td th:text="${post.date}">timestamp</td>
             <td>user</td>
         </tr>
     </table>

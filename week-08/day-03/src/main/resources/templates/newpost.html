@@ -10,9 +10,9 @@
 <h1>Submit a new post</h1>
 
 <div class="newpost">
-    <form action="#">
-        <p>Title: <input type="text" /></p>
-        <p>URL: <input type="text" /></p>
+    <form th:action="@{/submit}" th:object="${new_post}" method="post">
+        <p>Title: <input type="text" th:field="*{title}" /></p>
+        <p>URL: <input type="text" th:field="*{url}" /></p>
         <input type="submit" value="Submit">
     </form>
 </div>

@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
@@ -51,13 +48,13 @@ public class MainController {
     return "redirect:/";
   }
 
-  @GetMapping("/login")
+  @GetMapping("/register")
   public String submitUser(Model model) {
     model.addAttribute("new_user", new User());
-    return "login";
+    return "register";
   }
 
-  @PostMapping("/login")
+  @PostMapping("/register")
   public String createUser(@ModelAttribute User user) {
     userService.addUser(user);
     return "redirect:";

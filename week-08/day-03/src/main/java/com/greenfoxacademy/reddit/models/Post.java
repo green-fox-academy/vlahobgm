@@ -4,6 +4,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -18,6 +19,8 @@ public class Post {
   private int votes;
   @Temporal(TemporalType.TIMESTAMP)
   private Date date;
+  @ManyToOne
+  private User user;
 
   public Post() {
     this.date = new Date();
@@ -29,6 +32,14 @@ public class Post {
     this.url = url;
     this.date = new Date();
     this.votes = 0;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
   }
 
   public Date getDate() {

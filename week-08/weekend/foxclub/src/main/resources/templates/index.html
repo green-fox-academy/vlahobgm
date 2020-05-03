@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>FoxClub</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+
+<div class="links">
+    <ul>
+        <li><a th:href="@{/login}">Login</a></li>
+        <li th:if="${fox} != null"><a th:href="@{'/?name=' + ${fox.name}}">Information</a></li>
+        <li th:if="${fox} != null"><a th:href="@{'/nutritionStore?name=' + ${fox.name}}">Nutrition Store</a></li>
+        <li><a th:href="@{/login}">Trick Center</a></li>
+        <li><a th:href="@{/login}">Action History</a></li>
+    </ul>
+</div>
+
+<img src="img/greenfox.png" alt="fox">
+
+<div class="foxDetails" th:if="${fox} != null">
+    <p>This is <span th:text="${fox.name}"></span> Currentrly living on <span th:text="${fox.food}"></span> and
+        <span th:text="${fox.drink}"></span>. He
+        knows 2
+        tricks.</p>
+</div>
+<div class="foxDetails" th:if="${fox} == null">
+    <p>No Fox selected, please use Login page</p>
+</div>
+
+<div class="tricks">
+    <h1>Known tricks</h1>
+    <ul>
+        <li>write HTML</li>
+        <li>code in Java</li>
+    </ul>
+</div>
+
+</body>
+</html>

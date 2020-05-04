@@ -66,6 +66,6 @@ public class MainController {
     if (until == null) {
       return new ResponseEntity<>(new Error("Please provide a number!"), HttpStatus.BAD_REQUEST);
     }
-    return ResponseEntity.ok().body(doUntil(action, until));
+    return ResponseEntity.ok(new DoUntil(action, until.getUntil()));
   }
 }

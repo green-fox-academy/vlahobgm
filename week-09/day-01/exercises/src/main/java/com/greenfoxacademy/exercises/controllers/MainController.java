@@ -1,6 +1,7 @@
 package com.greenfoxacademy.exercises.controllers;
 
 import com.greenfoxacademy.exercises.models.AppendA;
+import com.greenfoxacademy.exercises.models.ArrayWithFunctions;
 import com.greenfoxacademy.exercises.models.DoUntil;
 import com.greenfoxacademy.exercises.models.Doubling;
 import com.greenfoxacademy.exercises.models.Error;
@@ -67,5 +68,16 @@ public class MainController {
       return new ResponseEntity<>(new Error("Please provide a number!"), HttpStatus.BAD_REQUEST);
     }
     return ResponseEntity.ok(new DoUntil(action, until.getUntil()));
+  }
+
+  @ResponseBody
+  @PostMapping("/arrays")
+  public ResponseEntity<?> getArrays(@RequestBody ArrayWithFunctions arrayWithFunctions) {
+    if (arrayWithFunctions.getNumbers().size() == 0) {
+      return ResponseEntity.badRequest().body(new Error("Please provide numbers!"));
+    } else if (arrayWithFunctions.getWhat().isEmpty()) {
+      return ResponseEntity.badRequest().body(new Error("Please provide what to do with numbers!"));
+    }
+    return ResponseEntity.ok(arrayWithFunctions);
   }
 }

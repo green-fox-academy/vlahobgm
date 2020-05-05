@@ -6,7 +6,10 @@ import com.greenfoxacademy.exercises.models.DoUntil;
 import com.greenfoxacademy.exercises.models.Doubling;
 import com.greenfoxacademy.exercises.models.Error;
 import com.greenfoxacademy.exercises.models.Greeter;
+import com.greenfoxacademy.exercises.models.Sith;
 import com.greenfoxacademy.exercises.models.Until;
+import com.greenfoxacademy.exercises.services.LogService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -20,7 +23,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MainController {
+  private LogService logService;
 
+  @Autowired
+  public MainController(LogService logService) {
+    this.logService = logService;
+  }
 
   @GetMapping("/")
   public String mainPage() {
@@ -79,5 +87,22 @@ public class MainController {
       return ResponseEntity.badRequest().body(new Error("Please provide what to do with numbers!"));
     }
     return ResponseEntity.ok(arrayWithFunctions);
+  }
+
+  /*@ResponseBody
+  @GetMapping("/log")
+  public ResponseEntity<?> getLogs() {
+
+  }*/
+
+  @ResponseBody
+  @PostMapping("/sith")
+  public ResponseEntity<?> getSithText(@RequestBody Sith sith) {
+    if (sith.getText() == null || sith.getText().equals("")) {
+      return ResponseEntity.badRequest().body(new Error("Feed me some text you have to, padawan" +
+          " young you are. Hmmm."));
+    }
+    sith.reorderText();
+    return ResponseEntity.ok(sith);
   }
 }

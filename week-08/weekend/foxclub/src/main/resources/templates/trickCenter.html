@@ -17,24 +17,14 @@
     </ul>
 </div>
 
-<img src="img/greenfox.png" alt="fox">
-
-<div class="foxDetails" th:if="${fox} != null">
-    <p>This is <span th:text="${fox.name}"></span> Currentrly living on <span th:text="${fox.food}"></span> and
-        <span th:text="${fox.drink}"></span>. He
-        knows 2
-        tricks.</p>
-</div>
-<div class="foxDetails" th:if="${fox} == null">
-    <p>No Fox selected, please use Login page</p>
-</div>
-
-<div class="tricks">
-    <h1>Known tricks</h1>
-    <ul>
-        <li>write HTML</li>
-        <li>code in Java</li>
-    </ul>
+<div>
+    <form th:action="@{'/trickCenter?name=' + ${fox.name}}" th:method="post">
+        <label for="tricks">Tricks</label>
+        <select  name="selectedFood" id="tricks">
+            <option th:each="trick : ${tricks}" th:value="${trick.name}" th:text="${trick.name}"></option>
+        </select>
+        <button type="submit">Learn</button>
+    </form>
 </div>
 
 </body>

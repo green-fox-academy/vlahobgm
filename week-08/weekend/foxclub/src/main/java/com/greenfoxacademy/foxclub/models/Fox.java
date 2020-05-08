@@ -2,9 +2,11 @@ package com.greenfoxacademy.foxclub.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -14,16 +16,17 @@ import javax.persistence.Table;
 public class Fox {
 
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
   private String name;
   private String food;
   private String drink;
 
-  @OneToMany(fetch = FetchType.EAGER)
-  private List<Trick> trick;
+  @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "fox")
+  private List<Trick> tricks;
 
   public Fox() {
+    this.tricks = new ArrayList<>();
   }
 
   public long getId() {
@@ -42,12 +45,12 @@ public class Fox {
     this.name = name;
   }
 
-  public List<Trick> getTrick() {
-    return trick;
+  public List<Trick> getTricks() {
+    return tricks;
   }
 
-  public void setTrick(List<Trick> trick) {
-    this.trick = trick;
+  public void setTricks(List<Trick> tricks) {
+    this.tricks = tricks;
   }
 
   public String getFood() {

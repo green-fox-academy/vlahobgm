@@ -3,12 +3,15 @@ package com.greenfoxacademy.foxclub.controllers;
 import com.greenfoxacademy.foxclub.models.Drink;
 import com.greenfoxacademy.foxclub.models.Food;
 import com.greenfoxacademy.foxclub.models.Fox;
+import com.greenfoxacademy.foxclub.models.Trick;
 import com.greenfoxacademy.foxclub.services.FoxService;
 import com.greenfoxacademy.foxclub.services.NutritionService;
+import com.greenfoxacademy.foxclub.services.TrickService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,11 +19,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
   private FoxService foxService;
   private NutritionService nutritionService;
+  private TrickService trickService;
 
   @Autowired
-  public MainController(FoxService foxService, NutritionService nutritionService) {
+  public MainController(FoxService foxService, NutritionService nutritionService, TrickService trickService) {
     this.foxService = foxService;
     this.nutritionService = nutritionService;
+    this.trickService = trickService;
   }
 
   @GetMapping("/")
@@ -51,6 +56,19 @@ public class MainController {
   public String postNutritionStore(@RequestParam String name, String selectedFood,
                                    String selectedDrink) {
     nutritionService.changeNutrition(selectedFood,selectedDrink,name);
+    return "redirect:/?name=" + name;
+  }
+
+  @GetMapping("/trickCenter")
+  public String getTrickCenter(@RequestParam String name, Model model) {
+    model.addAttribute("fox", foxService.getFoxByName(name));
+    model.addAttribute("tricks", trickService.returnAllTricks());
+    return "trickCenter";
+  }
+
+  @PostMapping("/trickCenter")
+  public String postTrickCenter(@RequestParam String name, Trick trick) {
+    trickService.addTrickToFox(trick, name);
     return "redirect:/?name=" + name;
   }
 }

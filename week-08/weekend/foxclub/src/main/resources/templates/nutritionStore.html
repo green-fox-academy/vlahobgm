@@ -12,7 +12,7 @@
         <li><a th:href="@{/login}">Login</a></li>
         <li th:if="${fox} != null"><a th:href="@{'/?name=' + ${fox.name}}">Information</a></li>
         <li th:if="${fox} != null"><a th:href="@{'/nutritionStore?name=' + ${fox.name}}">Nutrition Store</a></li>
-        <li><a th:href="@{/login}">Trick Center</a></li>
+        <li th:if="${fox} != null"><a th:href="@{'/trickCenter?name=' + ${fox.name}}">Trick Center</a></li>
         <li><a th:href="@{/login}">Action History</a></li>
     </ul>
 </div>

@@ -8,5 +8,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface TrickService {
   List<Trick> returnAllTricks();
-  void addTrickToFox(Trick trick, String name);
+  void addTrickToFox(String selectedTrick, String name);
 }

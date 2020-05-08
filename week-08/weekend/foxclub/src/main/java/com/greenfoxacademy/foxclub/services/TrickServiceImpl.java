@@ -27,8 +27,10 @@ public class TrickServiceImpl implements TrickService{
   }
 
   @Override
-  public void addTrickToFox(Trick trick, String name) {
+  public void addTrickToFox(String selectedTrick, String name) {
     Fox fox = foxRepository.getFoxByName(name);
+    Trick trick = new Trick();
+    trick.setName(selectedTrick);
     trick.setFox(fox);
     List<Trick> foxTricks = fox.getTricks();
     foxTricks.add(trick);

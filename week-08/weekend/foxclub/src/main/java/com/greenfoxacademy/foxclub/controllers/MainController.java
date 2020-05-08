@@ -67,8 +67,8 @@ public class MainController {
   }
 
   @PostMapping("/trickCenter")
-  public String postTrickCenter(@RequestParam String name, Trick trick) {
-    trickService.addTrickToFox(trick, name);
+  public String postTrickCenter(@RequestParam String name, String selectedTrick) {
+    trickService.addTrickToFox(selectedTrick, name);
     return "redirect:/?name=" + name;
   }
 }
